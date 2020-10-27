@@ -1,0 +1,300 @@
+.card {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    width: 100%;
+    padding: 12px 22px;
+    background:#68C2D0;
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+    height: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    transition: 1s;
+    backface-visibility: hidden;
+  }
+
+  .back-card {
+    padding: 12px 22px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    position: absolute;
+    transition: 1s;
+    backface-visibility: hidden;
+    background: #0E80A4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+  }
+
+  .back-card p, .back-card span {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .back-card__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-card p:nth-child(3) {
+    width: 100%;
+  }
+
+  .back-card {
+    transform: rotateY(180deg);
+  }
+
+  .card-block {
+    flex-basis: 23%;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .card-block__blocked:hover .card {
+    transform: rotateY(180deg);
+  }
+
+  .card-block__blocked:hover .back-card {
+    transform: rotateY(360deg);
+  }
+
+  .card-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #F1F0FD;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 7px 7px;
+  }
+
+  .card-progress div {
+    width: 15%;
+    height: 100%;
+    background: #B7F37C;
+border-radius: 0px 7px 7px 7px;
+  }
+  
+.card:hover {
+box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+  
+  
+.count-tasks {
+    position: absolute;
+    padding: 12px 16px;
+    width: 80px;
+    height: 80px;
+    background: #F3967C;
+    border-radius: 50% ;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 55px;
+    bottom: 6%;
+    right: 6%;
+}
+  
+  .card__title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    color: #FFFFFF;
+  }
+  
+  .card__subtitle {
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 23px;
+    
+  }
+  
+  .card-done {
+    background: #B7F37C;
+  }
+  
+  .card-done div {
+    text-align: center;
+  }
+  
+  .card-done .card__subtitle{
+    margin-bottom: 0;
+  }
+  
+  .card-done .count-tasks {
+    background: none;
+    right: 50%;
+    bottom: 32%;
+    transform: translateX(50%);
+  }
+  
+  .card-blocked {
+    background: #CFCFCF;
+    
+  }
+  
+  .card-blocked .count-tasks {
+    background: #4F4647;
+  }
+  
+  .card-blocked-animate {
+    animation: headShake;
+    animation-duration: .7s;
+  }
+  
+  .card-done .count-tasks::after {
+    content: "Done!";
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 55px;
+    color: #C2FE86;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -80%;
+  }
+
+
+  @media (max-width: 1440px) {
+    .card div img{
+        max-height: 120px;
+        height: 90%;
+    }
+
+    .card {
+        flex-basis: 30%;
+    }
+
+    .back-card p, .back-card span  {
+      font-size: 22px;
+    }
+    
+      .card__title { 
+        font-size: 28px;
+        line-height: 28px;
+      }
+    
+      .card__subtitle{
+        font-size: 24px;
+      }
+    
+      .count-tasks {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        padding: 0px 9px;
+      }
+    
+      .card-done .count-tasks {
+        bottom: 35%;
+      }
+    
+      .card-done .count-tasks::after {
+        font-size: 25px;
+        bottom: -72%;
+      }
+
+      .card-progress {
+        height: 10px;
+      }
+  }
+
+@media (max-width: 1000px) {
+
+    .card {
+        flex-basis: 30%;
+    }
+
+    .card-subtitle {
+        margin-bottom: 20px;
+    }
+    .card div img{
+        max-height: 100px;
+        height: 100%;
+    }
+
+    .card__title { 
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .card__subtitle{
+        font-size: 18px;
+    }
+
+    .count-tasks {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        line-height: 41px;
+        padding: 0px 7px;
+    }
+
+    .card-done .count-tasks {
+        bottom: 37%;
+    }
+
+    .card-done .count-tasks::after {
+        font-size: 25px;
+        bottom: -103%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-basis: 48%;
+    }
+
+    .card-done .count-tasks {
+        bottom: 29%;
+    }
+
+    .card-done .count-tasks::after {
+        font-size: 20px;
+        bottom: -103%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex-basis: 100%;
+    }
+    .card-done .count-tasks::after {
+      font-size: 24px;
+      bottom: -140%;
+  }
+
+    .card-done .count-tasks {
+      bottom: 35%;
+  }
+
+    .card div img{
+      max-height: 150px;
+      height: 90%;
+  }
+
+
+}
+
+
+
+
+@media (max-width: 320px) {
+
+    .card {
+        flex-basis: 100%;
+    }
+    
+}

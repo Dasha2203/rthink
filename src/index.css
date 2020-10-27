@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +19,92 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+.dashboard {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body {
+  background: #F0F0F0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  color: #2F2F2F;
+  margin-bottom: 41px;
+  margin-top: 40px;
+}
+
+
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tasks .card-block:last-child .card__title, .tasks .card-block:last-child div {
+  text-align: center;
+}
+
+.tasks .card-block:last-child .count-tasks {
+  display: none;
+}
+
+.accordion-wrapper {
+  display: none;
+}
+
+.accordion-wrapper.active {
+  display:block;
+}
+
+
+
+/* .day-tasks.show {
+  max-height: 1000px;
+} */
+
+@media (max-width: 1440px) {
+  .dashboard {
+    max-width: 940px;
+  }
+
+  
+
+  
+  
+}
+
+@media (max-width: 1200px) {
+  .card div img{
+    max-height: 100px;
+  }
+}
+
+
+@media (max-width: 1200px) { 
+  .dashboard {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 480px) { 
+  .dashboard {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 320px) { 
+  .dashboard {
+    max-width: 280px;
+  }
+}
+
