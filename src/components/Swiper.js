@@ -21,13 +21,19 @@ function Swiper1(props) {
     // for slider
     const [activeAccWrapper, setAccWrapper] = useState();
     const [index,setindex] = useState(1);
-    const [firstSwiper, setFirstSwiper] = useState(2);
-    const [secondSwiper, setSecondSwiper] = useState(2);
+    const [firstSwiper, setFirstSwiper] = useState(null);
+    const [secondSwiper, setSecondSwiper] = useState(null);
     //setFirstSwiper(index)
     //setindex(22)
 
   
+if (firstSwiper != null) {
+    firstSwiper.controller.control = secondSwiper;
+}
 
+if(secondSwiper != null) {
+    secondSwiper.controller.control = firstSwiper;
+}
 
   function upIndex(i) {
 
@@ -35,14 +41,17 @@ function Swiper1(props) {
   return (
         <div>
             <Swiper
+
+                className="swiper-container__title"
                 spaceBetween={50}
                 slidesPerView={1}
                 
                 navigation
-                effect="cube"
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={(a, b) => upIndex(a.activeIndex)}
-                onSwiper={setFirstSwiper} controller={{ control: secondSwiper }}
+                onSwiper={(swiper)=> {
+                    setFirstSwiper(swiper)
+                }} controller={{ control: secondSwiper }}
                 >
                 <SwiperSlide key="slide-1">
                     <h3 className="slider-title">Prev week practice</h3>
@@ -61,11 +70,11 @@ function Swiper1(props) {
             
             
             effect="cube"
-            onSwiper={(swiper) => console.log(swiper)}
+            onSwiper={(swiper) => setSecondSwiper(swiper)}
             onSlideChange={(a, b) => console.log(a)}
-            onSwiper={setSecondSwiper} controller={{ control: firstSwiper }}
+             controller={{ control: firstSwiper }}
     >
-      <SwiperSlide key="slide-1">
+      <SwiperSlide key="slide-1" style={{width:`100%`}}>
       <div className="accordion-wrapper active" id="1">
           <Accordion block={false} done={true} open={false} day = 'Monday' idac = '1' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
           <Accordion block={false} done={false} open={false} day = 'Today' idac = '2' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
@@ -76,7 +85,7 @@ function Swiper1(props) {
           <Accordion block={true} done={false} open={false} day = 'Sunday' idac = '7' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
         </div>
       </SwiperSlide>
-      <SwiperSlide key="slide-2">
+      <SwiperSlide key="slide-2" style={{width:`100%`}}>
       <div className="accordion-wrapper active" id="1">
           <Accordion block={false} done={true} open={false} day = 'Monday' idac = '1' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
           <Accordion block={false} done={false} open={false} day = 'Today' idac = '2' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
@@ -87,7 +96,7 @@ function Swiper1(props) {
           <Accordion block={true} done={false} open={false} day = 'Sunday' idac = '7' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
         </div>
       </SwiperSlide>
-      <SwiperSlide key="slide-3">
+      <SwiperSlide key="slide-3" style={{width:`100%`}}>
       <div className="accordion-wrapper active" id="1">
           <Accordion block={false} done={true} open={false} day = 'Monday' idac = '1' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>
           <Accordion block={false} done={false} open={false} day = 'Today' idac = '2' testObj = {props.obj}  active={active} setActive = {setActive} setActiveAcc={setActiveAcc} setActiveAccState={setActiveAccState}/>

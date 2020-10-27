@@ -1,8 +1,8 @@
 .day {
-    background: linear-gradient(to right, #fff 91%, #0E80A4 9%);
+    background: linear-gradient(to right, #fff 89%, #0E80A4 11%);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 7px;
-    padding: 26px 37px;
+    padding: 7px 21px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,9 +10,32 @@
     margin-bottom: 40px;
     position: relative;
     transition: all .3s;
+    padding-right: 40px;
+  }
+
+  .day::before{
+    border-radius: 7px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .day:hover::before {
+    opacity: 1;
+    /* transition: 0.3s;
+    background: linear-gradient(to right, #fff 89%, rgba(14, 128, 164, 0.7) 11%); */
+
   }
   
- 
+  .day-today {
+    padding: 15px 21px;
+    padding-right: 40px;
+  }
   
   .left-block {
     display: flex;
@@ -27,38 +50,38 @@
   .star-earn {
     display: flex;
     align-items: center;
-    margin-right: 36px;
+    margin-right: 27px;
   }
   
   .star-earn p {
     font-weight: 600;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 22px;
     color: #5A5A5A;
   }
   
   .count-star {
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 19px;
     color: #FFFFFF;
     position: relative;
     z-index: 1;
-    margin-right: 19px;
+    margin-right: 13px;
   }
   
   .count-star::after {
     content:"";
     display: block;
-    width: 59px;
-    height: 52px;
+    width: 45px;
+    height: 44px;
     display: block;
     position: absolute;
     background-image: url("../assets/img/star_earned.svg");
     background-repeat: no-repeat;
-    top: -12px;
-    left: -21px;
+    top: -40%;
+    left: -106%;
     z-index: -1;
   }
   
@@ -66,8 +89,8 @@
   
   .status-button {
     font-weight: bold;
-    font-size: 30px;
-    line-height: 41px;
+    font-size: 16px;
+    line-height: 22px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -96,8 +119,8 @@
   .day__title {
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
-    line-height: 47px;
+    font-size: 20px;
+    line-height: 27px;
     color: #5A5A5A;
     margin-left: 26px;
   }
@@ -118,10 +141,8 @@
   
   .day__title .today {
     font-weight: 600;
-    font-size: 30px;
-    line-height: 41px;
-    /* identical to box height */
-  
+    font-size: 20px;
+    line-height: 27px;
     background: #0E80A4;
     border-radius: 37px;
     color: #FFFFFF;
@@ -131,7 +152,7 @@
   
   .progress-bar {
     width: 22%;
-    height: 15px;
+    height: 9px;
     background: #F1F0FD;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.08);
     border-radius: 7px;
@@ -148,7 +169,7 @@
     border-radius: 7px;
   }
 
-  @media (max-width: 1440px) {
+  /* @media (max-width: 1440px) {
 
     .day {
         padding: 5px 20px;
@@ -253,4 +274,77 @@
     .day__title .today {
       margin-right: 160px;
     }
+} */
+
+@media (max-width: 1000px) {
+  .day { 
+    padding-right: 31px;
+  }
 }
+
+@media (max-width: 768px) {
+
+  .day {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: linear-gradient(to right, #fff 80%, #0E80A4 20%);
+      flex-wrap: wrap;
+      justify-content: flex-start;
+  }
+
+  .left-block {
+      flex-basis: 100%;
+  }
+  .day__title {
+      
+      line-height: 24px;
+  }
+
+  .status-button {
+      font-size: 18px;
+      order: 3;
+  }
+  .right-block {
+      flex-basis: 100%;
+  }
+
+  .progress-bar {
+     margin-top: 10px;
+     margin-bottom: 15px;
+      width: 40%; 
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+  }
+  .status-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 7%;
+  }
+
+  .star-earn {
+      margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .day__title {
+    margin-left: 10px;
+  }
+
+  .day {
+    background: linear-gradient(to right, #fff 75%, #0E80A4 25%);
+  }
+
+  .day__title .today {
+    margin-right: 160px;
+  }
+
+  .status-button{
+    right: 11%;
+  }
+}
+

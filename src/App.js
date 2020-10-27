@@ -1,14 +1,8 @@
 import './App.css';
 import React, {useState} from 'react'
 import 'swiper/swiper-bundle.css';
-
 import Card1 from './components/Card1'
-
-import Accordion from './components/Accordion';
-import Slider from './components/Slider'
 import Swiper1 from './components/Swiper'
-
-import SwiperWeek from './components/SwiperWeek'
 
 let testObj = {
   card: [
@@ -20,6 +14,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:10,
       blocked: false,
+      leadTime: false
     },
     {
       title: 'Logic',
@@ -29,6 +24,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:3,
       blocked: false,
+      leadTime: false
     },
     {
       title: 'Test  Math',
@@ -38,6 +34,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:0,
       blocked: false,
+      leadTime: '20'
     },
     {
       title: 'Thinking 3D',
@@ -47,6 +44,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:0,
       blocked: false,
+      leadTime: false
     },
     {
       title: 'Regularity',
@@ -56,6 +54,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:0,
       blocked: true,
+      leadTime: false
     },
     {
       title: 'Beyond Z',
@@ -65,6 +64,7 @@ let testObj = {
       countTasks: 10,
       countCompletedTasks:0,
       blocked: true,
+      leadTime: false
     }
   ]
 }

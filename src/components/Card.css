@@ -2,7 +2,8 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 7px;
     width: 100%;
-    padding: 12px 22px;
+    padding: 6px 12px 24px;
+
     background:#68C2D0;
     position: relative;
     cursor: pointer;
@@ -16,7 +17,7 @@
   }
 
   .back-card {
-    padding: 12px 22px;
+    padding: 12px 6px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 7px;
     position: absolute;
@@ -26,22 +27,33 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     top: 0;
     left: 0;
   }
 
-  .back-card p, .back-card span {
+  .back-card p {
     color: #fff;
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 600;
-    text-align: center;
+    line-height: 22px;
+    text-align: left;
   }
 
   .back-card__title {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 9px;
+    margin-bottom: 15px;
+    
+  }
+
+  .back-card__title span {
+    color: #fff;
+    font-size: 30px;
+    line-height: 41px;
+    font-weight: bold;
+    margin-right: 10px;
   }
 
   .back-card p:nth-child(3) {
@@ -71,7 +83,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 15px;
+    height: 9px;
     background: #F1F0FD;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 7px 7px;
@@ -81,42 +93,50 @@
     width: 15%;
     height: 100%;
     background: #B7F37C;
-border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 7px 7px 7px;
   }
   
-.card:hover {
-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-}
+  .card:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  }
   
+
+  .lead-time {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+  }
   
 .count-tasks {
     position: absolute;
-    padding: 12px 16px;
-    width: 80px;
-    height: 80px;
+    padding: 4% 5%;
+    width: 46px;
+    height: 46px;
     background: #F3967C;
     border-radius: 50% ;
     color: #fff;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 55px;
-    bottom: 6%;
+    font-size: 22px;
+    line-height: 30px;
+    bottom: 7%;
     right: 6%;
 }
+
   
   .card__title {
     font-weight: bold;
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 30px;
+    line-height: 40px;
     color: #FFFFFF;
   }
   
   .card__subtitle {
     font-weight: normal;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 17px;
+    line-height: 23px;
     color: #FFFFFF;
-    margin-bottom: 23px;
+    margin-bottom: 7px;
     
   }
   
@@ -135,7 +155,7 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   .card-done .count-tasks {
     background: none;
     right: 50%;
-    bottom: 32%;
+    bottom: 29%;
     transform: translateX(50%);
   }
   
@@ -156,7 +176,7 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   .card-done .count-tasks::after {
     content: "Done!";
     font-weight: bold;
-    font-size: 40px;
+    font-size: 16px;
     line-height: 55px;
     color: #C2FE86;
     position: absolute;
@@ -165,7 +185,7 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
     bottom: -80%;
   }
 
-
+/* 
   @media (max-width: 1440px) {
     .card div img{
         max-height: 120px;
@@ -208,15 +228,41 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
       .card-progress {
         height: 10px;
       }
-  }
+  }*/
 
 @media (max-width: 1000px) {
 
     .card {
-        flex-basis: 30%;
+      padding: 6px 12px 11px;
     }
 
-    .card-subtitle {
+    .card__title {
+      font-size: 22px;
+    }
+
+    .card__subtitle {
+      line-height: 17px;
+    }
+
+    .count-tasks {
+      font-size: 18px;
+      width: 35px;
+      height: 35px;
+      padding: 2% 4%;
+    }
+
+    .card-progress{
+      height: 7px;
+    }
+
+    .back-card__title span {
+      font-size: 18px;
+    }
+
+    .back-card p {
+      font-size: 14px;
+    }
+    /* .card-subtitle {
         margin-bottom: 20px;
     }
     .card div img{
@@ -248,11 +294,23 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
     .card-done .count-tasks::after {
         font-size: 25px;
         bottom: -103%;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
-    .card {
+  
+  .card {
+    padding: 6px 12px 25px;
+  }
+
+  .card-block {
+    flex-basis: 45%;
+  }
+
+  .count-tasks {
+    padding: 2% 4%;
+  }
+    /* .card {
         flex-basis: 48%;
     }
 
@@ -263,12 +321,16 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
     .card-done .count-tasks::after {
         font-size: 20px;
         bottom: -103%;
-    }
+    } */
 
 }
 
 @media (max-width: 480px) {
-    .card {
+
+  .card  {
+    padding: 6px 12px 45px;
+  }
+    .card-block {
         flex-basis: 100%;
     }
     .card-done .count-tasks::after {
@@ -280,11 +342,11 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
       bottom: 35%;
   }
 
-    .card div img{
-      max-height: 150px;
-      height: 90%;
-  }
+  
 
+  .count-tasks{
+    padding: 2% 3%;
+  }
 
 }
 
@@ -293,8 +355,5 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 
 @media (max-width: 320px) {
 
-    .card {
-        flex-basis: 100%;
-    }
     
-}
+} 

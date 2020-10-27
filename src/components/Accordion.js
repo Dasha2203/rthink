@@ -42,12 +42,12 @@ function Accordion(props) {
     return (
         <div className="accordion">
 
-            <div className={`day ${props.active === props.idac? 'active' : ''}`} onClick={toggleAccordion}>
+            <div className={`day ${props.day === 'Today' ? 'day-today': ''} ${props.active === props.idac? 'active' : ''}`} onClick={toggleAccordion}>
                 
                 {/* {console.log('ВЫполнено ' + props.done)} */}
                 <div className="left-block">
                     {props.done ? <img src="star.svg" alt="img"/>: 
-                        props.block ? <img src="lock.svg" alt="lock"/> :null}
+                        props.block ? <img src="lock.png" alt="lock"/> :null}
                     <div className="day__title" style={{marginLeft: `${props.day === 'Today' ? '0px': null}`}}>
                         {props.day === 'Today' ?
                             <p>
@@ -66,7 +66,7 @@ function Accordion(props) {
                     
                     {props.done ? 
                     <div className="star-earn"><div className="count-star">30</div><p>Stars earned!</p></div>:null}
-                    <p className={`status-button ${props.active === props.idac? 'active' : ''}` }>{props.active === props.idac && !props.setActiveAcc? 'Hide' : 'Open'}
+                    <p className={`status-button ${props.active === props.idac? 'active' : ''}` }>{props.active === props.idac ? 'Hide' : 'Open'}
                     </p>
                 </div>
             </div>
